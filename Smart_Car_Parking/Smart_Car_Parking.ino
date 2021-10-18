@@ -1,6 +1,6 @@
 
 // Fill-in information from your Blynk Template here
-#define BLYNK_TEMPLATE_ID "TMPLSKr-1bNr"
+#define BLYNK_TEMPLATE_ID "TMPLSKr-1bNr" 
 #define BLYNK_DEVICE_NAME "Car Parking"
 
 #define BLYNK_FIRMWARE_VERSION        "0.1.0"
@@ -10,13 +10,14 @@
 
 #define APP_DEBUG
 
-#define USE_NODE_MCU_BOARD
+#define USE_NODE_MCU_BOARD 
 
 #include "BlynkEdgent.h"
+// install required lib
 #include<Servo.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-
+//initalize the pins
 LiquidCrystal_I2C lcd(0x27,16,2);
 
 #define ir_entry D2
@@ -121,7 +122,7 @@ void loop() {
     lcd.setCursor(7,1);
     lcd.print("V");
   }
-
+  // to upload data to blynk server
   Blynk.virtualWrite(V0,val_slot1_ir);
   Blynk.virtualWrite(V1,val_slot2_ir);
   Blynk.virtualWrite(V2,val_slot3_ir);
